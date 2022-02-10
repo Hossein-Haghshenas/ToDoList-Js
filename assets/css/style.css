@@ -1,0 +1,52 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 15rem;
+}
+.bg-img {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 16rem;
+  width: 100%;
+  z-index: -10;
+}
+.bg-mask {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 16rem;
+  z-index: -5;
+  background-image: linear-gradient(#8d00ff80, #4610a952);
+}
+.title-section {
+  position: absolute;
+  top: 10rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  color: aliceblue;
+  font-family: monospace;
+  font-size: 1.5rem;
+  letter-spacing: 10px;
+  padding: 0 30rem;
+}
