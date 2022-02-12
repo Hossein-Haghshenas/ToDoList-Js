@@ -17,16 +17,25 @@ todoSubmit.addEventListener("click", (e) => {
   // Add classes & values
 
   containerSpan.className = "todo-text";
-  completeIcon.className = "fa fa-circle-check check-icon";
+  completeIcon.className = "fa-regular fa-circle check-icon";
   todoText.textContent = todoInput.value;
   deleteIcon.className = "fa fa-x d-none";
 
   // Add eventListener
+  newLi.addEventListener("click", function () {
+    this.firstChild.lastChild.classList.toggle("todo-done");
 
-  newLi.addEventListener("mouseover", (e) => {
+    const icon = this.firstChild.firstChild;
+    if (icon.classList.contains("fa-circle-check")) {
+      icon.classList.replace("fa-circle-check", "fa-circle");
+    } else {
+      icon.classList.replace("fa-circle", "fa-circle-check");
+    }
+  });
+  newLi.addEventListener("mouseover", () => {
     deleteIcon.classList.toggle("d-none");
   });
-  newLi.addEventListener("mouseout", (e) => {
+  newLi.addEventListener("mouseout", () => {
     deleteIcon.classList.toggle("d-none");
   });
   deleteIcon.addEventListener("click", function (e) {

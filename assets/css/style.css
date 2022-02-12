@@ -22,6 +22,10 @@ body {
 .d-none {
   display: none;
 }
+.todo-done {
+  text-decoration: line-through;
+  color: rgb(92, 92, 92);
+}
 .bg {
   position: absolute;
   top: 0;
