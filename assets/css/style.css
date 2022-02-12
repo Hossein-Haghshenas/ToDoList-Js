@@ -100,11 +100,15 @@ header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.116);
   padding: 1rem 1rem;
 }
+.todo-text {
+  display: flex;
+  justify-content: baseline;
+}
 .todo-text span {
-  margin-left: 1.5rem;
+  margin-left: 0.6rem;
 }
 .todo-text i {
-  top: 17px;
+  position: unset;
 }
 .todo-options {
   padding: 1rem 0.5rem;
