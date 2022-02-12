@@ -10,6 +10,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>ToDoList</title>
   </head>
@@ -18,10 +19,39 @@
       <img src="assets/img/mountains-1412683.png" class="bg-img" />
       <section class="bg-mask"></section>
     </section>
-    <section class="title-section">
-      <h1 class="title">TODO</h1>
-      <i class="fa-solid fa-moon"></i>
-    </section>
+    <header>
+      <section class="title-section">
+        <h1 class="title">TODO</h1>
+        <i class="fa-solid fa-moon"></i>
+      </section>
+      <section class="todo-input">
+        <input type="text" placeholder="Type here ..." />
+        <i class="fa-solid fa-circle-check check-icon"></i>
+      </section>
+    </header>
+
+    <main class="todo-display">
+      <ul class="todo-items">
+        <li>
+          <span class="todo-text"
+            ><i class="fa fa-circle-check check-icon"></i><span>hii</span></span
+          >
+          <i class="fa fa-x"></i>
+        </li>
+      </ul>
+      <section class="todo-options">
+        <section class="todo-Number" id="todo-Number">0 Items left</section>
+        <section class="filter-btns">
+          <ul>
+            <li><button>All</button></li>
+            <li><button>Active</button></li>
+            <li><button>Completed</button></li>
+          </ul>
+        </section>
+        <section class="clearAll-btn"><button>Clear Completed</button></section>
+      </section>
+    </main>
+    <footer>Created By HosseinDveloper member of Aps</footer>
     <script src="assets/js/script.js"></script>
   </body>
 </html>

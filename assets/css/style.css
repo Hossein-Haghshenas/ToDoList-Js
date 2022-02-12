@@ -5,6 +5,12 @@
   padding: 0;
   border: none;
   outline: none;
+  list-style: none;
+  background: none;
+}
+button,
+i {
+  cursor: pointer;
 }
 body {
   display: flex;
@@ -38,9 +44,13 @@ body {
   z-index: -5;
   background-image: linear-gradient(#8d00ff80, #4610a952);
 }
-.title-section {
+header {
   position: absolute;
-  top: 10rem;
+  top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+.title-section {
   display: flex;
   justify-content: space-around;
   align-items: baseline;
@@ -48,5 +58,83 @@ body {
   font-family: monospace;
   font-size: 1.5rem;
   letter-spacing: 10px;
-  padding: 0 30rem;
+}
+.title-section h1 {
+  margin-right: 7rem;
+}
+.title-section i {
+  margin-left: 4rem;
+  cursor: unset;
+}
+.todo-input {
+  position: absolute;
+  top: 4rem;
+}
+.todo-input input,
+.todo-display {
+  padding: 0.7rem 2.5rem;
+  width: 23rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: rgb(255, 255, 255);
+}
+.check-icon {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.6rem;
+  border-radius: 50px;
+  color: rgb(111, 0, 255);
+  font-size: 1.1rem;
+}
+.todo-display {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 13rem;
+  padding: 0 !important;
+  box-shadow: 0px 0px 3px 0px #81818199;
+}
+.todo-items li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.116);
+  padding: 1rem 1rem;
+}
+.todo-text span {
+  margin-left: 1.5rem;
+}
+.todo-text i {
+  top: 17px;
+}
+.todo-options {
+  padding: 1rem 0.5rem;
+}
+.todo-options * {
+  margin: 0 0.1rem;
+  font-size: 13px;
+  color: rgb(121, 121, 121);
+  transition: all 0.5s ease-in-out;
+}
+.todo-options button:hover {
+  color: rgb(22, 22, 22);
+}
+
+.todo-options,
+.filter-btns ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.filter-btns ul li {
+  margin: 0 0.2rem;
+}
+.filter-btns ul li:first-child button {
+  color: rgb(0, 153, 255);
+}
+footer {
+  position: absolute;
+  bottom: 2rem;
+  color: rgba(59, 59, 59, 0.644);
+  font-family: cursive;
 }
