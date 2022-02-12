@@ -19,6 +19,9 @@ body {
   align-items: center;
   position: relative;
 }
+.d-none {
+  display: none;
+}
 .bg {
   position: absolute;
   top: 0;

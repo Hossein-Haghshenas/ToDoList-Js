@@ -7,18 +7,40 @@ const todoSubmit = document.getElementById("todo-submit");
 todoSubmit.addEventListener("click", (e) => {
   const newLi = document.createElement("li");
 
-  const newI1 = document.createElement("i");
-  const newI2 = document.createElement("i");
-  const newSpan1 = document.createElement("span");
-  const newSpan2 = document.createElement("span");
+  // Create elements
 
-  newSpan1.className = "todo-text";
-  newI1.className = "fa fa-circle-check check-icon";
-  newSpan2.textContent = todoInput.value;
-  newSpan1.append(newI1, newSpan2);
-  newI2.className = "fa fa-x";
+  const containerSpan = document.createElement("span");
+  const completeIcon = document.createElement("i");
+  const todoText = document.createElement("span");
+  const deleteIcon = document.createElement("i");
 
-  newLi.append(newSpan1, newI2);
+  // Add classes & values
 
-  menu.appendChild(newLi);
+  containerSpan.className = "todo-text";
+  completeIcon.className = "fa fa-circle-check check-icon";
+  todoText.textContent = todoInput.value;
+  deleteIcon.className = "fa fa-x d-none";
+
+  // Add eventListener
+
+  newLi.addEventListener("mouseover", (e) => {
+    deleteIcon.classList.toggle("d-none");
+  });
+  newLi.addEventListener("mouseout", (e) => {
+    deleteIcon.classList.toggle("d-none");
+  });
+  deleteIcon.addEventListener("click", function (e) {
+    this.parentElement.remove();
+  });
+
+  containerSpan.append(completeIcon, todoText);
+
+  newLi.append(containerSpan, deleteIcon);
+
+  if (todoInput.value !== "") {
+    menu.appendChild(newLi);
+    todoInput.value = "";
+  } else {
+    alert("Please enter something");
+  }
 });
