@@ -34,25 +34,38 @@ todoSubmit.addEventListener("click", (e) => {
     const icon = this.firstChild.firstChild;
     if (icon.classList.contains("fa-circle-check")) {
       icon.classList.replace("fa-circle-check", "fa-circle");
+
+      // todo counter
+
       completedNumber += 1;
       todocounter();
     } else {
       icon.classList.replace("fa-circle", "fa-circle-check");
+
+      // todo counter
+
       completedNumber -= 1;
       todocounter();
     }
   });
-  //hover for active delete btn
+
+  //hover for make active delete btn
+
   newLi.addEventListener("mouseover", () => {
     deleteIcon.classList.toggle("d-none");
   });
   newLi.addEventListener("mouseout", () => {
     deleteIcon.classList.toggle("d-none");
   });
+
   //delete todo with delete btn
+
   deleteIcon.addEventListener("click", function (e) {
     e.stopPropagation();
     this.parentElement.remove();
+
+    // todo counter
+
     if (
       this.previousElementSibling.lastElementChild.classList.contains(
         "todo-done"
@@ -65,25 +78,41 @@ todoSubmit.addEventListener("click", (e) => {
     }
   });
 
+  // append check btn & todo text in container
+
   containerSpan.append(completeIcon, todoText);
 
+  // append container & delete btn in newLi
+
   newLi.append(containerSpan, deleteIcon);
+
+  // check input for valid value & make it empty
 
   if (todoInput.value !== "") {
     menu.appendChild(newLi);
     todoInput.value = "";
+
+    // todo counter
+
     completedNumber++;
     todocounter();
   } else {
-    alert("Please enter something");
+    alert("Please enter something !");
   }
+
+  // call todo filter function
 
   todofilter();
 });
 
+// todo counter function
+
 function todocounter() {
   todoNumber.textContent = `${completedNumber} Items left`;
 }
+
+// Create filter for todos
+
 function todofilter() {
   let todoItems = Array.from(menu.children);
 
@@ -96,16 +125,22 @@ function todofilter() {
           break;
         case "active":
           todoItems.map((elem) =>
-            elem.classList.contains("done")
+            !elem.classList.contains("done")
               ? elem.classList.remove("d-none")
               : elem.classList.add("d-none")
           );
           break;
         case "complete":
-          alert("complete");
+          todoItems.map((elem) =>
+            elem.classList.contains("done")
+              ? elem.classList.remove("d-none")
+              : elem.classList.add("d-none")
+          );
           break;
         case "clear":
-          alert("clear");
+          todoItems.map((elem) =>
+            elem.classList.contains("done") ? elem.remove() : elem
+          );
           break;
         default:
           "error";
